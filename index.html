@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শহীদ এম মনসুর আলী কলেজ, পাবনা</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SolaimanLipi', 'Kalpurush', Arial, sans-serif;
+        }
+        body {
+            background-color: #f2f4f7;
+            color: #222;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* টপ বার */
+        .top-bar {
+            background-color: #0b4f36;
+            color: #fff;
+            padding: 8px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 13px;
+            border-bottom: 2px solid #f9a825;
+        }
+        .top-right a {
+            background: #146c43;
+            padding: 3px 8px;
+            border-radius: 3px;
+            margin-left: 5px;
+            font-size: 12px;
+        }
+
+        /* হেডার */
+        header {
+            background: #ffffff;
+            padding: 15px 4%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .college-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #0b4f36;
+            object-fit: cover;
+            background: #0b4f36;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .brand-text h1 {
+            color: #0b4f36;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .brand-text h3 {
+            color: #b71c1c;
+            font-size: 14px;
+        }
+        .brand-text p {
+            color: #444;
+            font-size: 12px;
+        }
+        .header-codes {
+            background: #f1f8e9;
+            border: 1px solid #c5e1a5;
+            border-right: 4px solid #0b4f36;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #1b5e20;
+        }
+
+        /* নেভিগেশন মেনু */
+        nav {
+            background-color: #0f6848;
+            padding: 0 4%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav-menu > li {
+            position: relative;
+        }
+        .nav-menu > li > a {
+            display: block;
+            color: #ffffff;
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .nav-menu > li:hover > a {
+            background-color: #08422c;
+            color: #ffeb3b;
+        }
+
+        /* মেইন লেআউট */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 15px;
+            margin: 15px 4%;
+        }
+
+        .content-card {
+            background: #ffffff;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            border-top: 3px solid #0f6848;
+        }
+        .card-header {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+        .card-header h2 {
+            color: #0b4f36;
+            font-size: 18px;
+            border-left: 4px solid #b71c1c;
+            padding-left: 8px;
+        }
+
+        /* টেবিল */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+        th, td {
+            border: 1px solid #dce1e5;
+            padding: 8px 10px;
+            text-align: left;
+            font-size: 13.5px;
+        }
+        th {
+            background-color: #0f6848;
+            color: #ffffff;
+        }
+        tr:nth-child(even) { background-color: #f8fafb; }
+        .pdf-badge {
+            background: #d32f2f;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        /* বিভাগ চিপস */
+        .dept-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .dept-chip {
+            background: #f1f8e9;
+            border: 1px solid #c5e1a5;
+            border-left: 3px solid #0f6848;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #1b5e20;
+            font-size: 13px;
+        }
+
+        /* সাইডবার */
+        .sidebar-box {
+            background: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+        }
+        .sidebar-title {
+            background: #0f6848;
+            color: #ffffff;
+            padding: 9px 12px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #f9a825;
+        }
+        .sidebar-content {
+            padding: 12px;
+            text-align: center;
+        }
+        .link-list {
+            list-style: none;
+            text-align: left;
+            padding: 8px 12px;
+        }
+        .link-list li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #ddd;
+            font-size: 13.5px;
+        }
+
+        /* ফুটার */
+        footer {
+            background: #15221b;
+            color: #cfd8dc;
+            padding: 30px 4% 15px;
+            margin-top: 25px;
+            border-top: 4px solid #f9a825;
+            font-size: 13.5px;
+        }
+        .footer-cols {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .footer-col h3 {
+            color: #ffffff;
+            border-bottom: 2px solid #0f6848;
+            padding-bottom: 6px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #2e3d34;
+            padding-top: 12px;
+            font-size: 12.5px;
+            color: #a5d6a7;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .brand-text h1 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- টপ বার -->
+    <div class="top-bar">
+        <div>📞 01309-125659, 01714-511178 | ✉️ monsurali@yahoo.com</div>
+        <div class="top-right">
+            <a href="#notice">নোটিশ</a>
+            <a href="#dress-code">ড্রেস কোড</a>
+            <a href="#gallery">গ্যালারি</a>
+        </div>
+    </div>
+
+    <!-- হেডার -->
+    <header>
+        <div class="brand-box">
+            <div class="college-logo">SMMC</div>
+            <div class="brand-text">
+                <h1>শহীদ এম মনসুর আলী কলেজ, পাবনা</h1>
+                <h3>Shaheed M. Mansur Ali College, Pabna</h3>
+                <p>শালগারিয়া, বাইপাস মোড়, পাবনা সদর, পাবনা-৬৬০০</p>
+            </div>
+        </div>
+        <div class="header-codes">
+            <strong>EIIN: ১২৫৬৫৯</strong> | NU Code: ২১০৮<br>
+            Board Code: ২৫৭৫ | BTEB: ২৩০৫৮
+        </div>
+    </header>
+
+    <!-- নেভিগেশন মেনু -->
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#">হোম</a></li>
+            <li><a href="#about">কলেজ বৃত্তান্ত</a></li>
+            <li><a href="#dress-code">কলেজ ড্রেস কোড</a></li>
+            <li><a href="#departments">বিভাগসমূহ</a></li>
+            <li><a href="#notice">নোটিশ বোর্ড</a></li>
+            <li><a href="#gallery">ফটো গ্যালারি</a></li>
+            <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <!-- মেইন কন্টেন্ট -->
+    <div class="main-grid">
+        <!-- বাম কলাম -->
+        <div>
+
+            <!-- ড্রেস কোড সেকশন -->
+            <div class="content-card" id="dress-code">
+                <div class="card-header">
+                    <h2>শিক্ষার্থীদের নির্ধারিত কলেজ ড্রেস কোড (College Uniform)</h2>
+                </div>
+                <div style="text-align: center; margin-bottom: 12px;">
+                    <img src="1000311285.png" alt="College Dress Code" style="max-width: 100%; height: auto; border-radius: 5px; border: 2px solid #0f6848;">
+                </div>
+                <p style="text-align: justify; font-size: 14px;">
+                    কলেজের শৃঙ্খলা বজায় রাখতে ছাত্রীদের জন্য সাদা সালোয়ার, কামিজ ও হিজাব এবং ছাত্রদের জন্য সাদা শার্ট (কাঁধে নীল ফিতাযুক্ত) ও গাঢ় নীল (Navy Blue) রঙের ট্রাউজার নির্ধারিত রয়েছে।
+                </p>
+            </div>
+
+            <!-- নোটিশ বোর্ড -->
+            <div class="content-card" id="notice">
+                <div class="card-header">
+                    <h2>বিজ্ঞপ্তি (Notice Board)</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>তারিখ</th>
+                            <th>শিরোনাম</th>
+                            <th>ডাউনলোড</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>18 Oct 26</td>
+                            <td>২০২৬ শিক্ষাবর্ষের ড্রেস কোড ও পরিচয়পত্র আবশ্যিক পরিধান প্রসঙ্গে।</td>
+                            <td><span class="pdf-badge">pdf</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>15 Oct 26</td>
+                            <td>ডিগ্রি পাস ৩য় বর্ষের শিক্ষার্থীদের ইনকোর্স পরীক্ষা প্রসঙ্গে।</td>
+                            <td><span class="pdf-badge">pdf</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>10 Oct 26</td>
+                            <td>একাদশ শ্রেণিতে ভর্তি ও ক্লাস সংক্রান্ত জরুরি বিজ্ঞপ্তি।</td>
+                            <td><span class="pdf-badge">pdf</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- কলেজ বৃত্তান্ত -->
+            <div class="content-card" id="about">
+                <div class="card-header">
+                    <h2>কলেজ বৃত্তান্ত ও ইতিহাস</h2>
+                </div>
+                <p style="text-align: justify; font-size: 14px;">
+                    জাতীয় চার নেতার অন্যতম শহীদ ক্যাপ্টেন এম. মনসুর আলী-এর স্মরণে ১৯৯৬ সালের ১ জুলাই পাবনা শহরের শালগারিয়া বাইপাস মোড়ে <strong>শহীদ এম মনসুর আলী কলেজ</strong> প্রতিষ্ঠিত হয়। প্রায় ২.৫০ একর জমির ওপর প্রতিষ্ঠিত এই কলেজে বর্তমানে ৩,০০০+ শিক্ষার্থী ও ৮০ জন শিক্ষক কর্মরত আছেন।
+                </p>
+            </div>
+
+            <!-- বিভাগসমূহ -->
+            <div class="content-card" id="departments">
+                <div class="card-header">
+                    <h2>বিভাগ সমূহ (অনার্স, পাস ও উচ্চমাধ্যমিক)</h2>
+                </div>
+                <p style="font-weight: bold; color: #b71c1c; margin-bottom: 5px;">স্নাতক (সম্মান) ১০টি বিভাগ:</p>
+                <div class="dept-list">
+                    <div class="dept-chip">অর্থনীতি</div>
+                    <div class="dept-chip">বাংলা</div>
+                    <div class="dept-chip">রাষ্ট্রবিজ্ঞান</div>
+                    <div class="dept-chip">সমাজবিজ্ঞান</div>
+                    <div class="dept-chip">ইতিহাস</div>
+                    <div class="dept-chip">দর্শন</div>
+                    <div class="dept-chip">হিসাববিজ্ঞান</div>
+                    <div class="dept-chip">ব্যবস্থাপনা</div>
+                    <div class="dept-chip">মার্কেটিং</div>
+                    <div class="dept-chip">ভূগোল ও পরিবেশ</div>
+                </div>
+                <p style="font-weight: bold; color: #0b4f36; margin: 12px 0 5px;">উচ্চমাধ্যমিক ও অন্যান্য:</p>
+                <div class="dept-list">
+                    <div class="dept-chip">বিজ্ঞান বিভাগ</div>
+                    <div class="dept-chip">মানবিক বিভাগ</div>
+                    <div class="dept-chip">ব্যবসায় শিক্ষা</div>
+                    <div class="dept-chip">এইচএসসি (বি.এম)</div>
+                    <div class="dept-chip">ডিগ্রি (পাস) কোর্স</div>
+                </div>
+            </div>
+
+            <!-- ফটো গ্যালারি -->
+            <div class="content-card" id="gallery">
+                <div class="card-header">
+                    <h2>ফটো গ্যালারি</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px;">
+                    <img src="1000311281.webp" alt="Campus" style="width:100%; height:110px; object-fit:cover; border-radius:4px;">
+                    <img src="1000311280.webp" alt="Building" style="width:100%; height:110px; object-fit:cover; border-radius:4px;">
+                    <img src="1000311278.webp" alt="Mural" style="width:100%; height:110px; object-fit:cover; border-radius:4px;">
+                    <img src="1000311274.jpg" alt="Tree" style="width:100%; height:110px; object-fit:cover; border-radius:4px;">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ডান কলাম (সাইডবার) -->
+        <div>
+            <div class="sidebar-box">
+                <div class="sidebar-title">অধ্যক্ষ মহোদয়</div>
+                <div class="sidebar-content">
+                    <h4 style="color: #0b4f36; font-size: 16px;">মো: আব্দুস সামাদ খান</h4>
+                    <p style="font-size: 13px; color: #555; font-weight: bold;">অধ্যক্ষ</p>
+                    <p style="font-size: 12.5px; text-align: justify; margin-top: 8px; background: #fafafa; padding: 6px;">
+                        "শিক্ষার্থীদের আধুনিক জ্ঞান ও নৈতিক মূল্যবোধসম্পন্ন আদর্শ নাগরিক হিসেবে গড়ে তুলতে আমরা বদ্ধপরিকর।"
+                    </p>
+                </div>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">এক নজরে তথ্য</div>
+                <ul class="link-list">
+                    <li>🏛️ <strong>স্থাপিত:</strong> ০১ জুলাই ১৯৯৬</li>
+                    <li>🔢 <strong>EIIN:</strong> ১২৫৬৫৯</li>
+                    <li>🎓 <strong>NU কোড:</strong> ২১০৮</li>
+                    <li>📋 <strong>বোর্ড কোড:</strong> ২৫৭৫</li>
+                    <li>👨‍🏫 <strong>শিক্ষক:</strong> ৮০ জন</li>
+                    <li>🧑‍🎓 <strong>শিক্ষার্থী:</strong> ৩,০০০+ জন</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="sidebar-title">প্রয়োজনীয় লিঙ্ক</div>
+                <ul class="link-list">
+                    <li>🔗 <a href="https://www.nu.ac.bd/" target="_blank">জাতীয় বিশ্ববিদ্যালয়</a></li>
+                    <li>🔗 <a href="http://www.rajshahieducationboard.gov.bd/" target="_blank">রাজশাহী শিক্ষা বোর্ড</a></li>
+                    <li>🔗 <a href="https://dshe.gov.bd/" target="_blank">মাউশি অধিদপ্তর</a></li>
+                    <li>🔗 <a href="http://xiclassadmission.gov.bd/" target="_blank">একাদশ শ্রেণি ভর্তি</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ফুটার -->
+    <footer id="contact">
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h3>যোগাযোগের ঠিকানা</h3>
+                <p><strong>শহীদ এম মনসুর আলী কলেজ, পাবনা</strong></p>
+                <p>📍 শালগারিয়া, বাইপাস মোড়, পাবনা সদর, পাবনা-৬৬০০</p>
+                <p>📞 ফোন: 01309-125659, 01714-511178</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            কপিরাইট © ২০২৬ সর্বস্বত্ব সংরক্ষিত, শহীদ এম মনসুর আলী কলেজ, পাবনা
+        </div>
+    </footer>
+
+</body>
+</html>
